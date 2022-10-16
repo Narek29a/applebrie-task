@@ -1,0 +1,18 @@
+<img *ngIf="!isLoaded" src="assets/images/loader.gif">
+<h2>User Portfolio</h2>
+<table>
+  <tr>
+    <th *ngFor="let column of columns">{{column}}</th>
+  </tr>
+  <tr class="data-row" *ngFor="let userPost of usersPosts$ | async" routerLink="user-posts/{{userPost.user.id}}">
+    <td>{{userPost.user.username}}</td>
+    <td>{{userPost.user.email}}</td>
+    <td>{{userPost.user.address.city}}</td>
+    <td>{{userPost.user.phone}}</td>
+    <td>{{userPost.user.website}}</td>
+    <td>{{userPost.user.company.name}}</td>
+    <td>
+      {{userPost.posts.length > 0 ? userPost.posts[0].title: 'No Posts'}}
+    </td>
+  </tr>
+</table>

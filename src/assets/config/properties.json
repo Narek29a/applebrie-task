@@ -1,0 +1,4 @@
+{
+  "get-users-url": "https://jsonplaceholder.typicode.com/users",
+  "get-posts-url": "https://jsonplaceholder.typicode.com/posts"
+}
